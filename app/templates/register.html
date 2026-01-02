@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5 col-lg-4">
+        <div class="card card-custom py-4 px-3">
+            <div class="card-body">
+                <h3 class="text-center mb-4 fw-bold text-secondary">Create Account</h3>
+
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Full Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Email Address</label>
+                        <input type="email" name="email" class="form-control" placeholder="name@example.com" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Create a password"
+                            required>
+                    </div>
+                    <div class="d-grid mb-3">
+                        <button class="btn btn-primary-custom btn-lg">Register</button>
+                    </div>
+                </form>
+
+                <div class="text-center mt-4 border-top pt-3">
+                    <p class="text-muted mb-1">Already have an account?</p>
+                    <a href="{{ url_for('auth.login') }}" class="text-decoration-none fw-bold text-primary">Login
+                        Here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

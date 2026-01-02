@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card card-custom">
+            <div class="card-header-custom d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">IT Support Dashboard</h4>
+                <a href="{{ url_for('auth.logout') }}" class="btn btn-outline-secondary btn-sm">Logout</a>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0 align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="ps-4">ID</th>
+                                <th>User</th>
+                                <th>Department</th>
+                                <th>Issue</th>
+                                <th>Status</th>
+                                <th>Assigned To</th>
+                                <th class="text-end pe-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ticket in tickets %}
+                            <tr>
+                                <td class="ps-4 fw-bold">#{{ ticket.id }}</td>
+                                <td>
+                                    <div class="fw-bold">{{ ticket.user_name }}</div>
+                                    <div class="small text-muted">{{ ticket.email }}</div>
+                                </td>
+                                <td><span class="badge bg-light text-dark border">{{ ticket.department }}</span></td>
+                                <td style="max-width: 300px;">
+                                    <div class="text-truncate" style="max-width: 280px;" title="{{ ticket.issue }}">
+                                        {{ ticket.issue }}
+                                    </div>
+                                </td>
+                                <td>
+                                    {% if ticket.status == 'Pending' %}
+                                    <span class="badge badge-status-pending">Pending</span>
+                                    {% elif ticket.status == 'In Progress' %}
+                                    <span class="badge badge-status-inprogress">In Progress</span>
+                                    {% elif ticket.status == 'Resolved' %}
+                                    <span class="badge badge-status-resolved">Resolved</span>
+                                    {% else %}
+                                    <span class="badge badge-status-closed">Closed</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ ticket.assigned_to or "-" }}</td>
+                                <td class="text-end pe-4">
+                                    <a href="{{ url_for('admin.ticket_detail', ticket_id=ticket.id) }}"
+                                        class="btn btn-sm btn-outline-primary">Manage</a>
+                                </td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="7" class="text-center py-5 text-muted">No tickets found.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

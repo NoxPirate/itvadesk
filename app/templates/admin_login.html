@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5 col-lg-4">
+        <div class="card card-custom py-4 px-3 border-danger border-2">
+            <div class="card-body">
+                <h3 class="text-center mb-4 fw-bold text-danger">Admin Login</h3>
+
+                <form method="POST" action="{{ url_for('auth.admin_login') }}">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Email Address</label>
+                        <input type="email" name="email" class="form-control" placeholder="admin@domain.com" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Enter password"
+                            required>
+                    </div>
+                    <div class="d-grid mb-3">
+                        <button class="btn btn-danger btn-lg" style="border-radius: 8px;">Login as Admin</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

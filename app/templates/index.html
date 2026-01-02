@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vihang Ahead It Desk | Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            background: linear-gradient(135deg, #ff8a00, #ff6a00);
+        }
+
+        .left {
+            width: 35%;
+            background: linear-gradient(120deg, #e3f2fd, #f7be6e);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 15px 0 35px rgba(0, 0, 0, 0.2);
+            border-top-right-radius: 60px;
+            border-bottom-right-radius: 60px;
+        }
+
+
+        .login-box {
+            width: 330px;
+        }
+
+        .login-box h2 {
+            margin-bottom: 8px;
+            color: #222;
+            font-size: 28px;
+        }
+
+        .login-box p {
+            margin-bottom: 28px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 18px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: .3s;
+        }
+
+        .login-box input:focus {
+            border-color: #ff7a00;
+            box-shadow: 0 0 0 3px rgba(255, 122, 0, .2);
+            outline: none;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #ff8a00, #ff6a00);
+            border: none;
+            border-radius: 10px;
+            color: #f0ebeb;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .login-box button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 122, 0, .4);
+        }
+
+        /* ERROR */
+        .error {
+            margin-top: 12px;
+            font-size: 14px;
+            color: red;
+        }
+
+        /* RIGHT PANEL */
+        .right {
+            width: 65%;
+            background: linear-gradient(135deg, #f9f5f5, #fb8b03);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+            border-top-left-radius: 80px;
+            border-bottom-left-radius: 80px;
+        }
+
+
+        /* subtle glow circles */
+        .right::before,
+        .right::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, .15);
+            border-radius: 50%;
+        }
+
+        .right::before {
+            top: -100px;
+            right: -100px;
+        }
+
+        .right::after {
+            bottom: -120px;
+            left: -120px;
+        }
+
+        .right img {
+            width: 130px;
+            margin-bottom: 25px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-15px)
+            }
+
+            100% {
+                transform: translateY(0)
+            }
+        }
+
+        .right h1 {
+            font-size: 46px;
+            letter-spacing: 3px;
+        }
+
+        .right span {
+            margin-top: 5px;
+            font-size: 15px;
+            opacity: .9;
+        }
+
+        .right p {
+            margin-top: 15px;
+            font-size: 18px;
+            letter-spacing: 1px;
+            opacity: .95;
+        }
+
+        /* MOBILE */
+        @media(max-width:900px) {
+            body {
+                flex-direction: column
+            }
+
+            .left,
+            .right {
+                width: 100%;
+                height: auto
+            }
+        }
+    </style>
+
+
+    <!-- LEFT LOGIN OPTIONS -->
+    <div class="left">
+        <div class="login-box">
+            <h2>Welcome</h2>
+            <p>Please select your login type</p>
+
+            <a href="{{ url_for('auth.login') }}" style="text-decoration: none;">
+                <button style="margin-bottom: 20px;">User Login</button>
+            </a>
+
+            <a href="{{ url_for('auth.admin_login') }}" style="text-decoration: none;">
+                <button style="background: linear-gradient(135deg, #444, #222);">Admin Login</button>
+            </a>
+
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="{{ url_for('auth.register') }}" style="color: #666; font-size: 14px;">New User? Register
+                    here</a>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

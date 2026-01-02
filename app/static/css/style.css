@@ -1,0 +1,91 @@
+/* Vihang Ahead Professional Theme */
+:root {
+    --primary: #ff6a00;
+    --primary-dark: #e65c00;
+    --secondary: #2c3e50;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --text-muted: #6c757d;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar-custom {
+    background: linear-gradient(90deg, #ff6a00, #ff8a00);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+/* Cards */
+.card-custom {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    background: white;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card-header-custom {
+    background-color: white;
+    border-bottom: 2px solid var(--light);
+    padding: 20px;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+/* Form Controls */
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.25);
+}
+
+/* Buttons */
+.btn-primary-custom {
+    background-color: var(--primary);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 106, 0, 0.3);
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    background-color: white;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Status Badges */
+.badge-status-pending { background-color: #ffc107; color: #212529; }
+.badge-status-inprogress { background-color: #17a2b8; }
+.badge-status-resolved { background-color: #28a745; }
+.badge-status-closed { background-color: #6c757d; }
