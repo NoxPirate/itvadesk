@@ -16,11 +16,11 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Mail Configuration
-    MAIL_SERVER = "smtp.gmail.com"
+    MAIL_SERVER = ""
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = "itvadesk@gmail.com"
-    MAIL_PASSWORD = "jdffvrnipwmwtoeb"
-    MAIL_DEFAULT_SENDER = "itvadesk@gmail.com"
+    MAIL_USERNAME = ""
+    MAIL_PASSWORD = ""
+    MAIL_DEFAULT_SENDER = ""
 
 
