@@ -3,14 +3,14 @@ import smtplib
 from email.mime.text import MIMEText
 
 def test_smtp_connection():
-    smtp_server = "smtp.gmail.com"
+    smtp_server = ""
     smtp_port = 587
-    smtp_user = "itvadesk@gmail.com"
+    smtp_user = ""
     # This password was present in the config
-    smtp_password = "jdffvrnipwmwtoeb" 
+    smtp_password = "" 
 
     sender = smtp_user
-    recipient = "ritiks.987654321@gmail.com"
+    recipient = ""
 
     msg = MIMEText("This is a test email from the debugger script.")
     msg['Subject'] = "SMTP Debug Test"
